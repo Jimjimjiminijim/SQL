@@ -6,13 +6,15 @@ COMMENT ON TABLE "MATLAB Scan Variables" IS 'Contains all MATLAB variables assoc
 
 CREATE TABLE "DIAL Campaigns" (
 "Camp_id"  SERIAL ,
-"Site Name" TEXT ,
 "Date of Campaign" DATE ,
+"Site Name" TEXT ,
+"Site Geometry" GEOMETRY /* Will provide info for GIS location of site */,
 PRIMARY KEY ("Camp_id")
 );
 COMMENT ON TABLE "DIAL Campaigns" IS 'Contains campaign information. This is the top level table.';
+COMMENT ON COLUMN "DIAL Campaigns"."Site Geometry" IS 'Will provide info for GIS location of site';
 
-CREATE TABLE "new table" (
+CREATE TABLE "DIAL Location" (
 "id"  SERIAL ,
 PRIMARY KEY ("id")
 );
